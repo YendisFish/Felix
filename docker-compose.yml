@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - felix
+    volumes:
+      - mongodb_data:/data/db  # Persist MongoDB data
+
+  backend:
+    build:
+      context: ./Backend
+    container_name: backend
+    networks:
+      - felix
+    ports:
+      - "5678:8080"  # Map host port 3000 to container port 3000
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URL: mongodb://mongodb:27017/ # Connect to MongoDB
+      aeskey: to-be-exactly-32-characters-here
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "6789:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+
+networks:
+  felix:
+    driver: bridge
+
+volumes:
+  mongodb_data:
