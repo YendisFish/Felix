@@ -1,4 +1,5 @@
 using CSL.Encryption;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 using BC = BCrypt.Net.BCrypt;
@@ -9,7 +10,7 @@ public record User(string username, string hash, Guid uuid)
 {
     public object _id { get; set; }
 
-    internal static MongoClient mdbClient = new MongoClient("mongodb://localhost:27017");
+    internal static MongoClient mdbClient = new MongoClient("mongodb://mongodb:27017");
     internal static string aesKey = Environment.GetEnvironmentVariable("aeskey") ?? throw new NullReferenceException();
 
     public static string HashPassword(string plaintext) => BC.HashPassword(plaintext);
@@ -20,7 +21,7 @@ public record User(string username, string hash, Guid uuid)
     {
         IMongoDatabase db = mdbClient.GetDatabase("felix");
         User ret = db.GetCollection<User>("users").AsQueryable().First(x => x.username == username);
-
+        
         if (User.ValidatePassword(plaintext, ret.hash))
         {
             string jsonString = JsonConvert.SerializeObject(ret);

@@ -23,7 +23,7 @@ public class Users
             }
             else
             {
-                throw new Exception("Could not create user!");
+                throw new Exception("User already exists!");
             }
         });
     }
