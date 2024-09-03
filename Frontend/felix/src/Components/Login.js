@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './login.css';
-
+import FelixButton from './FelixButton'
 
 function Login() {
     const [inputPassword, setInputPassword] = useState('');
@@ -23,7 +23,7 @@ function Login() {
     return (
         <div className="login-page">
             <header> 
-                <h1>Felix</h1>
+                <h1 className="login-felix">Felix</h1>
             </header>
         
             <div className="login-form">
@@ -33,8 +33,8 @@ function Login() {
                     
 
                     <input type="password" value={inputPassword} onChange={handleInputPassword} placeholder="Password" />
-
-                    <button type="submit">Sign In</button>
+                    
+                    <FelixButton type="submit">Sign In</FelixButton>
                 </form>
             </div>
         </div>
