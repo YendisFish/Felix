@@ -1,4 +1,4 @@
-﻿import './felixbutton.css'
+﻿import '../CSS/felixbutton.css'
 
 function FelixButton({children, type}) {
     return (

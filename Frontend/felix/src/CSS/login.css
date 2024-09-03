@@ -31,12 +31,12 @@ p {
 }
 
 /* Center the container on the page */
-div {
+/*div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+}*/
 
 .login-form {
 
@@ -51,12 +51,13 @@ h2 {
     text-align: left;
 }
 
-body {
-    background: linear-gradient(to top, #4e1f5a, #5400b3); 
-}
+/*body {
+    background: linear-gradient(to top, #4e1f5a, #5400b3);
+}*/
 
 .login-page {
-    position: fixed;
+    padding-top: 25vh;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,7 +65,17 @@ body {
 }
 
 .login-felix {
+    color: white;
     position: absolute;
-    top: -26vh;
-    left: -31vw;
+    top: -1vh;
+    left: 1vw;
+}
+
+.login {
+    position: fixed;
+    background: linear-gradient(to top, #4e1f5a, #5400b3);
+    top: 0vh;
+    left: 0vw;
+    right: 0vw;
+    bottom: 0vh;
 }

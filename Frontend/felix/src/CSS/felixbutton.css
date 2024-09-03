@@ -1,5 +1,5 @@
 ﻿/* Style for the submit button */
-button {
+.felix-button {
     width: 100%;
     padding: 10px;
     background-color: #791c9e;
@@ -11,6 +11,6 @@ button {
 }
 
 /* Button hover effect */
-button:hover {
+.felix-button:hover {
     background-color: #51278d;
 }
