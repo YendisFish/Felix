@@ -1,0 +1,78 @@
+/* Container for the login form */
+form {
+    max-width: 400px;
+    /* height: 60vh; */
+    margin: 40px flex;
+    padding: 100px;
+    padding-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #4e1f5a;
+}
+
+.login-title {
+    margin-bottom: 5vh;
+}
+
+/* Style for the input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for the labels */
+p {
+    margin: 0;
+    font-weight: bold;
+    color: black;
+}
+
+/* Style for the submit button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #791c9e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Center the container on the page */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+
+}
+
+h2{
+    color:rgb(255, 255, 255);
+}
+
+.logo-name{
+    color:black;
+    text-align: left;
+}
+
+body {
+    background: linear-gradient(to top, #4e1f5a, #5400b3); 
+}
+
+.login-page {
+    position:fixed;
+}
